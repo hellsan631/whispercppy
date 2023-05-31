@@ -26,18 +26,18 @@ _data_home = environ.get(
 )
 
 MODELS_URL = {
-    model_type: f"https://huggingface.co/datasets/ggerganov/whisper.cpp/resolve/main/ggml-{model_type}.bin"
+    model_type: f"https://huggingface.co/datasets/ggerganov/whisper.cpp/resolve/main/{model_type}.bin"
     for model_type in (
-        "tiny.en",
-        "tiny",
-        "base.en",
-        "base",
-        "small.en",
-        "small",
-        "medium.en",
-        "medium",
-        "large-v1",
-        "large",
+        "ggml-tiny.en",
+        "ggml-tiny",
+        "ggml-base.en",
+        "ggml-base",
+        "ggml-small.en",
+        "ggml-small",
+        "ggml-medium.en",
+        "ggml-medium",
+        "ggml-large-v1",
+        "ggml-large",
     )
 }
 
@@ -62,7 +62,7 @@ def download_model(
     if not path.exists(models_dirs):  # pragma: no cover
         makedirs(models_dirs, exist_ok=True)
 
-    model_path = path.join(models_dirs, f"ggml-{model_name}.bin")
+    model_path = path.join(models_dirs, f"{model_name}.bin")
     if not path.exists(model_path):
         sys.stderr.write(f"Downloading model {model_name}. It may take a while...")
         request.urlretrieve(MODELS_URL[model_name], model_path)
