@@ -58,7 +58,7 @@ def download_model(
     """
     if basedir is None:
         basedir = _data_home
-    models_dirs = path.join(basedir, "whispercpp")
+    models_dirs = path.join(basedir)
     if not path.exists(models_dirs):  # pragma: no cover
         makedirs(models_dirs, exist_ok=True)
 
