@@ -28,6 +28,7 @@ class build_ext(_build_ext):
         extra_cmake_flags = []
         if WHISPER_ENABLE_COREML:
             extra_cmake_flags.append("-DWHISPER_COREML=1")
+        print("extra_cmake_flags", extra_cmake_flags)
 
         # Based on the scikit build tooling
         archflags = os.environ.get("ARCHFLAGS")

@@ -22,7 +22,7 @@ logger = logging.getLogger(__name__)
 
 _data_home = environ.get(
     "XDG_DATA_HOME",
-    path.join(path.expanduser(path.expandvars("$HOME")), ".local", "share"),
+    path.join(path.expanduser(path.expandvars("$HOME")), ".local", "share", "whisperccp"),
 )
 
 MODELS_URL = {
