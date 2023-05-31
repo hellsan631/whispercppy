@@ -9,7 +9,7 @@ from pybind11.setup_helpers import Pybind11Extension
 from pybind11.setup_helpers import build_ext as _build_ext
 from setuptools import Extension, setup
 
-WHISPER_ENABLE_COREML = False
+WHISPER_ENABLE_COREML = True
 
 __version__ = "0.0.2"
 
