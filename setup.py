@@ -1,17 +1,18 @@
-import os
+import os  # noqa: I001
 import shutil
 import subprocess
 from glob import glob
 from pathlib import Path
 from sysconfig import get_path
 
+from setuptools import Extension, setup
 from pybind11.setup_helpers import Pybind11Extension
 from pybind11.setup_helpers import build_ext as _build_ext
-from setuptools import Extension, setup
+
 
 WHISPER_ENABLE_COREML = True
 
-__version__ = "0.0.2"
+__version__ = "0.0.4"
 
 
 class CopyWhisperDummyExtension(Extension):
@@ -96,7 +97,7 @@ ext_modules = [
         library_dirs=["./build"],
         libraries=["whisper"],
         runtime_library_dirs=["@loader_path", "$ORIGIN"],
-    ),
+    )
 ]
 
 
